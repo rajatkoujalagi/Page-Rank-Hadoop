@@ -1,0 +1,41 @@
+/***************INTRODUCTION TO DATA SCIENCE PROJECT********/
+/***************PROJECT REPORT********************************/
+
+Description
+Steps:
+1. Installed hadoop on the local machine.
+2. Executed the sample WordCount to confirm if the hadoop file system is working correctly.
+3. Coded for the first task to create the adjacency list for all the titles for a small dataset.
+4. Calculated N; total number of nodes in the datasets. Implemented the page rank algorithm to calculate the rank of each page assuming intial page rank to be 1/N.
+5. Iterated it for 8 times to get appropriate page rank.
+6.Finally sorted the pages in the decreasing order of the page ranks and saved only those pages in the file system which has page rank greater then 5/N.
+7. Executed the code for the local filesystem.
+7. Executed the algorithm successfully in AWS.
+
+Development of the code:
+Steps:
+1. In the main class (PageRank)we created separate functions for each task where each function sets the mapper class, reducer class, input file, output file and performs the required jobs.
+ 2.InpXmlFormatter parses through the input file based upon the start and begin tags used as delimiters saves the parsed file in the buffer.
+3. PageMapper and PageReducer classes uses the buffer and generates the adjacency list.
+4. In CalculateNMapper and CalculateNReducer we calculate the value of N to further find out the page rank of each page.
+5. PageRankSortMapper and PageRankSortReducer sort the pages in decreasing order of page ranks of each page as calculated in the previous step.
+
+
+
+Difficulties:
+1. Code was executed as desired in the local file system but was unable to produce desired result in the AWS. FileSystem was replaced by URI for it to work correctly on AWS.
+2. Initially setting up environment was challenging but once it was setup running the algorithm was easy on AWS.
+
+
+Rajat's work:
+Setting up local hadoop file system environment.
+Developing the code for job 1,  job2 and job 3.
+
+Neelam's work
+Developing the code for job 4 and job 5.
+Running the code on AWS.
+
+Learnings:
+1. Understanding and using MapReduce paradigm.
+2. Setting up AWS environment and running MapReduce jobs.
+3. Realizing the efficieny of Hadoop File System and MapReduce in dealing with huge datasets.  
